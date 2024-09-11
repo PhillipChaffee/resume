@@ -50,7 +50,7 @@
       "position": "Software Engineer",
       "startDate": "2017",
       "endDate": "2020",
-      "tech": [".NET", "Angular", "React", "Python", "SQLServer", "Redis"],
+      "tech": ["C#", ".NET", ".NET Core", "Angular", "React", "Python", "SQLServer", "Redis"],
       "highlights": ["Implemented supplier initiated SAML SSO for flagship website. Used internally and by multiple clients.", "Moved the cookie authentication and management from a C# legacy library to a .NET Core microservice that could be used by static web applications. Supported 10k+ requests/sec.", "Collaborated on changing our document storage solution from a file system storage system that needed to sync across all offices to a blob storage system that only synced between two offices for failover reasons. Used to store all internal documents and documents uploaded to our web offering by clients."],
       "summary": "The Platform Engineering team maintains and revamps the underlying architecture used by other development teams across Chatham. We work on things like our in-house REST API template, our document storage system, permissions API, etc.",
       "location": "Kennett Square, Pennsylvania"
