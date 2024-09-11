@@ -6,7 +6,7 @@
     "email": "phillipdensmorechaffee@gmail.com",
     "phone": "443-553-5272",
     "url": "",
-    "summary": "Self taught software engineer with 6 years of experience. Expertise in Rails, Typescript, Postgres, React, REST APIs, and authentication. Passionate about clean code, types, health/health tech/nutrition/exercise, and community.",
+    "summary": "Software engineer with 7 years of experience. Passionate about clean code, testing, types, health/health tech/nutrition/exercise, and community.",
     "location": {
       "countryCode": "US",
       "city": "San Francisco"
@@ -29,7 +29,8 @@
       "name": "VoiceOps",
       "position": "Senior Software Engineer",
       "startDate": "2021",
-      "tech": ["Rails", "React", "Node.js", "Python", "AWS", "PostgreSQL"],
+      "endDate": "2023",
+      "tech": ["Rails", "React", "Node.js", "Python", "AWS", "PostgreSQL", "Redis"],
       "highlights": ["Implemented SAML SSO allowing our customers to authenticate to the VoiceOps platform using their own identity provider. Used by 20% of our clients.", "Collaborated on a project to redesign our transcription process that reduced transcription cost by 90%, bringing our cost per audio minute from $.20 to $.02.", "Fulfilled on call duties in real time, resolving 5+ production issues each month.", "Wrote a <a href='https://www.npmjs.com/package/assemblyai-v2-node-sdk'>Typescript SDK</a> for the AssemblyAI API."],
       "summary": "Lead daily engineering stand-up, bi-weekly sprint planning, and sprint retrospective. Collaborated with the other senior engineers on new software architecture including a call audio integration API, a microservice that aligns text and audio, and an overhaul of our transcription UI.",
       "location": "San Francisco Bay Area"
@@ -39,7 +40,7 @@
       "position": "Software Engineer",
       "startDate": "2020",
       "endDate": "2021",
-      "tech": ["Rails", "React", "Python", "AWS", "PostgreSQL"],
+      "tech": ["Rails", "React", "Python", "AWS", "PostgreSQL", "Redis"],
       "highlights": ["The VoiceOps frontend. A platform for call center managers and coaches to view the transcripts of their employees calls, review labels about what happened on each call, and do live coaching via comments in the app.", "A mechanical turk style transcription marketplace that supported 10k+ daily users logging in and performing manual transcription, transcript grading, and transcript tagging tasks.", " A data pipeline that transformed raw audio data into transcribed and tagged text.", " Multiple customer integrations that imported data from our customers into our data pipeline."],
       "summary": "Collaborated with the other engineers on:",
       "location": "San Francisco Bay Area"
@@ -49,7 +50,7 @@
       "position": "Software Engineer",
       "startDate": "2017",
       "endDate": "2020",
-      "tech": [".NET", "Angular", "React", "Python", "SQLServer"],
+      "tech": [".NET", "Angular", "React", "Python", "SQLServer", "Redis"],
       "highlights": ["Implemented supplier initiated SAML SSO for flagship website. Used internally and by multiple clients.", "Moved the cookie authentication and management from a C# legacy library to a .NET Core microservice that could be used by static web applications. Supported 10k+ requests/sec.", "Collaborated on changing our document storage solution from a file system storage system that needed to sync across all offices to a blob storage system that only synced between two offices for failover reasons. Used to store all internal documents and documents uploaded to our web offering by clients."],
       "summary": "The Platform Engineering team maintains and revamps the underlying architecture used by other development teams across Chatham. We work on things like our in-house REST API template, our document storage system, permissions API, etc.",
       "location": "Kennett Square, Pennsylvania"
@@ -86,7 +87,7 @@
   "skills": [
     {
       "name": "Backend",
-      "keywords": ["Ruby", "Node.js/Typescript", "C#", "Python", "SQL", "Redis", "NoSQL"]
+      "keywords": ["Node.js/Typescript", "C#", "Python", "Ruby", "SQL", "Redis", "NoSQL"]
     },
     {
       "name": "Frontend",
