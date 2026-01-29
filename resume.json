@@ -2,11 +2,11 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Phillip Chaffee",
-    "label": "Senior Software Engineer",
+    "label": "Founding Software Engineer",
     "email": "phillipdensmorechaffee@gmail.com",
     "phone": "443-553-5272",
     "url": "",
-    "summary": "Software engineer with 7 years of experience. Passionate about people, community, exercise, and music. Happiest when working with others, as a team or in a mentorship.",
+    "summary": "Software engineer with 10 years of experience. Passionate about people, community, exercise, and music. Happiest when working with others, as a team or in a mentorship.",
     "location": {
       "countryCode": "US",
       "city": "San Francisco"
@@ -25,6 +25,26 @@
     ]
   },
   "work": [
+    {
+      "name": "Sela",
+      "position": "Founding Software Engineer",
+      "startDate": "2025",
+      "endDate": "",
+      "tech": ["Python", "Django", "FastAPI", "PostgreSQL", "Redis", "RabbitMQ", "Celery", "AWS", "Docker", "Kubernetes", "Helm"],
+      "highlights": [
+        "First engineer and first employee at an AI startup building conversational AI agents.",
+        "Built warm transfer phone calling system enabling seamless handoffs between AI agents and human operators.",
+        "Developed agent orchestration framework for coordinating multiple AI agents.",
+        "Built a system for rapidly cloning AI agents, accelerating customer onboarding.",
+        "Led adoption of AI-assisted coding practices and implemented AI context files across the engineering organization.",
+        "Built the initial version of the texting functionality.",
+        "Implemented linting, formatting, and typing standards across all codebases.",
+        "Set up the observability stack including Sentry, Grafana, Prometheus, Loki, and Tempo.",
+        "Implemented the first metrics system to provide insight into system behavior."
+      ],
+      "summary": "First engineer and first employee. Responsible for building core infrastructure, product features, and engineering practices from the ground up.",
+      "location": "San Francisco"
+    },
     {
       "name": "VoiceOps",
       "position": "Senior Software Engineer",
@@ -81,15 +101,23 @@
   "skills": [
     {
       "name": "Backend",
-      "keywords": ["Node.js/Typescript", "C#", "Python", "Ruby", "SQL", "Redis", "NoSQL"]
+      "keywords": ["Python", "Django", "FastAPI", "Node.js/Typescript", "C#", "Ruby", "Celery", "RabbitMQ"]
+    },
+    {
+      "name": "Data",
+      "keywords": ["PostgreSQL", "Redis", "SQL", "NoSQL"]
     },
     {
       "name": "Frontend",
       "keywords": ["React", "Angular"]
     },
     {
-      "name": "Tools",
-      "keywords": ["Git", "Linux", "AWS", "HashiCorp"]
+      "name": "Infrastructure",
+      "keywords": ["AWS", "Docker", "Kubernetes", "Helm", "Git", "Linux"]
+    },
+    {
+      "name": "Observability",
+      "keywords": ["Grafana", "Prometheus", "Loki", "Tempo", "Sentry"]
     }
   ],
   "languages": [],
