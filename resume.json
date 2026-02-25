@@ -6,7 +6,7 @@
     "email": "phillipdensmorechaffee@gmail.com",
     "phone": "443-553-5272",
     "url": "",
-    "summary": "Software engineer with 10 years of experience. Passionate about people, community, exercise, and music. Happiest when working with others, as a team or in a mentorship.",
+    "summary": "Full-stack software engineer with 10 years of experience. Most recently the founding engineer at an AI startup building conversational AI agents. Thrives in fast-paced environments and happiest when collaborating with others.",
     "location": {
       "countryCode": "US",
       "city": "San Francisco"
@@ -34,13 +34,11 @@
       "highlights": [
         "First engineer and first employee at an AI startup building conversational AI agents.",
         "Built warm transfer phone calling system enabling seamless handoffs between AI agents and human operators.",
-        "Developed agent orchestration framework for coordinating multiple AI agents.",
-        "Built a system for rapidly cloning AI agents, accelerating customer onboarding.",
+        "Developed agent orchestration framework for coordinating multiple AI agents across concurrent conversations.",
+        "Built a system for rapidly cloning and configuring AI agents, accelerating customer onboarding.",
         "Led adoption of AI-assisted coding practices and implemented AI context files across the engineering organization.",
-        "Built the initial version of the texting functionality.",
         "Implemented linting, formatting, and typing standards across all codebases.",
-        "Set up the observability stack including Sentry, Grafana, Prometheus, Loki, and Tempo.",
-        "Implemented the first metrics system to provide insight into system behavior."
+        "Built observability dashboards and alerting using Grafana, Prometheus, Loki, Tempo, and Sentry, providing real-time insight into system health and performance."
       ],
       "summary": "First engineer and first employee. Responsible for building core infrastructure, product features, and engineering practices from the ground up.",
       "location": "San Francisco"
@@ -51,8 +49,8 @@
       "startDate": "2021",
       "endDate": "2023",
       "tech": ["Rails", "React", "Node.js", "Python", "AWS", "PostgreSQL", "Redis"],
-      "highlights": ["Implemented SAML SSO allowing our customers to authenticate to the VoiceOps platform using their own identity provider. Used by 20% of our clients.", "Collaborated on a project to redesign our transcription process that reduced transcription cost by 90%, bringing our cost per audio minute from $.20 to $.02.", "Fulfilled on call duties in real time, resolving 5+ production issues each month.", "Wrote a <a href='https://www.npmjs.com/package/assemblyai-v2-node-sdk'>Typescript SDK</a> for the AssemblyAI API."],
-      "summary": "Lead daily engineering stand-up, bi-weekly sprint planning, and sprint retrospective. Collaborated with the other senior engineers on new software architecture including a call audio integration API, a microservice that aligns text and audio, and an overhaul of our transcription UI.",
+      "highlights": ["Redesigned the transcription data pipeline, reducing cost by 90% and bringing cost per audio minute from $.20 to $.02.", "Architected a call audio integration API and a microservice for text-audio alignment.", "Implemented SAML SSO allowing customers to authenticate using their own identity provider. Used by 20% of clients.", "Fulfilled on-call duties, resolving 5+ production issues each month.", "Wrote a <a href='https://www.npmjs.com/package/assemblyai-v2-node-sdk'>Typescript SDK</a> for the AssemblyAI API."],
+      "summary": "Led engineering ceremonies and collaborated with senior engineers on new architecture including API design, microservice development, and an overhaul of the transcription platform.",
       "location": "San Francisco Bay Area"
     },
     {
@@ -61,8 +59,8 @@
       "startDate": "2020",
       "endDate": "2021",
       "tech": ["Rails", "React", "Python", "AWS", "PostgreSQL", "Redis"],
-      "highlights": ["The VoiceOps frontend. A platform for call center managers and coaches to view the transcripts of their employees calls, review labels about what happened on each call, and do live coaching via comments in the app.", "A mechanical turk style transcription marketplace that supported 10k+ daily users logging in and performing manual transcription, transcript grading, and transcript tagging tasks.", " A data pipeline that transformed raw audio data into transcribed and tagged text.", " Multiple customer integrations that imported data from our customers into our data pipeline."],
-      "summary": "Collaborated with the other engineers on:",
+      "highlights": ["Built a mechanical turk style transcription marketplace supporting 10k+ daily users performing manual transcription, transcript quality grading, and annotation tagging tasks.", "Developed a data processing pipeline that transformed raw audio into transcribed and tagged text across multiple processing stages.", "Built the customer-facing review platform for call center managers to view transcripts, review annotation labels, and provide coaching feedback.", "Developed multiple customer integrations that imported data from external partners into the processing pipeline."],
+      "summary": "Built data collection platforms, processing pipelines, and customer-facing tools for a voice analytics startup.",
       "location": "San Francisco Bay Area"
     },
     {
@@ -71,8 +69,8 @@
       "startDate": "2017",
       "endDate": "2020",
       "tech": ["C#", ".NET", ".NET Core", "Angular", "React", "Python", "SQLServer", "Redis"],
-      "highlights": ["Implemented supplier initiated SAML SSO for flagship website. Used internally and by multiple clients.", "Moved the cookie authentication and management from a C# legacy library to a .NET Core microservice that could be used by static web applications. Supported 10k+ requests/sec.", "Collaborated on changing our document storage solution from a file system storage system that needed to sync across all offices to a blob storage system that only synced between two offices for failover reasons. Used to store all internal documents and documents uploaded to our web offering by clients."],
-      "summary": "The Platform Engineering team maintains and revamps the underlying architecture used by other development teams across Chatham. We work on things like our in-house REST API template, our document storage system, permissions API, etc.",
+      "highlights": ["Built a .NET Core authentication microservice replacing a legacy library, supporting 10k+ requests/sec across all web applications.", "Implemented SAML SSO for the flagship website, used internally and by multiple clients.", "Migrated document storage from a distributed file system to blob storage with failover replication, serving all internal and client-uploaded documents."],
+      "summary": "Platform Engineering team building shared infrastructure used by development teams across the company: REST API templates, document storage, authentication services, and permissions APIs.",
       "location": "Kennett Square, Pennsylvania"
     },
     {
