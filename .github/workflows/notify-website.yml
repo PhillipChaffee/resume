@@ -1,0 +1,16 @@
+name: Notify Website
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger website rebuild
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.WEBSITE_DISPATCH_TOKEN }}
+          repository: PhillipChaffee/phillipchaffee.github.io
+          event-type: resume-updated
