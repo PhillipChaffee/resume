@@ -6,7 +6,7 @@
     "email": "phillipdensmorechaffee@gmail.com",
     "phone": "443-553-5272",
     "url": "",
-    "summary": "Full-stack software engineer with 10 years of experience. Most recently the founding engineer at an AI startup building conversational AI agents. Thrives in fast-paced environments and happiest when collaborating with others.",
+    "summary": "Software engineer with 10+ years of experience building distributed backend systems. Currently founding engineer at Sela AI, building conversational AI phone agents across the voice runtime, backend, telephony orchestration, Kubernetes scaling, and observability. Strong system-design bias; happiest collaborating across product, infra, and ML.",
     "location": {
       "countryCode": "US",
       "city": "San Francisco"
@@ -28,19 +28,16 @@
     {
       "name": "Sela",
       "position": "Founding Software Engineer",
-      "startDate": "2025",
-      "endDate": "",
-      "tech": ["Python", "Django", "FastAPI", "PostgreSQL", "Redis", "RabbitMQ", "Celery", "AWS", "Docker", "Kubernetes", "Helm"],
+      "startDate": "2024",
+      "tech": ["Python", "Django", "FastAPI", "PostgreSQL", "Redis", "RabbitMQ", "Celery", "AWS", "Docker", "Kubernetes", "Helm", "Twilio", "Pipecat", "gRPC", "Terraform", "Statsig"],
       "highlights": [
-        "First engineer and first employee at an AI startup building conversational AI agents.",
-        "Built warm transfer phone calling system enabling seamless handoffs between AI agents and human operators.",
-        "Developed agent orchestration framework for coordinating multiple AI agents across concurrent conversations.",
-        "Built a system for rapidly cloning and configuring AI agents, accelerating customer onboarding.",
-        "Led adoption of AI-assisted coding practices and implemented AI context files across the engineering organization.",
-        "Implemented linting, formatting, and typing standards across all codebases.",
-        "Built observability dashboards and alerting using Grafana, Prometheus, Loki, Tempo, and Sentry, providing real-time insight into system health and performance."
+        "First engineer and first employee at an AI startup building conversational AI phone agents; shipped 430+ merged MRs across the founding Python microservices stack (Django, FastAPI, Celery, gRPC) on Kubernetes in 16 months, owning the founding stack end-to-end.",
+        "Designed the warm-transfer phone calling system that hands live calls between AI agents and human operators: built a shared orchestration library with typed parent/child state machines, compare-and-set transitions, and snapshot/diff merge for concurrent saves on a Redis-backed session store, then rolled it out across the voice runtime, backend, and a parallel e2e suite behind feature flags.",
+        "Owned Kubernetes scaling and cost posture for the voice runtime: built predictive autoscaling on KEDA driven by scheduled-call counts 15 minutes ahead, replaced a 30-minute preStop sleep with a SIGTERM-aware graceful WebSocket drain across 4 gunicorn workers per pod, and cut overnight floor pods by ~75% with no impact on morning ramp.",
+        "Built the observability platform from scratch using Grafana, Prometheus, Loki, Tempo, and Sentry; instrumented call-quality and pipeline-timing histograms across services, then cut histogram cardinality by an order of magnitude by pruning high-cardinality labels when TSDB queries were timing out the on-call dashboard.",
+        "Shipped customer-facing telephony and AI-agent product features: call-outcome modeling driven by carrier disconnect reasons and Twilio AMD, agent / user talk-time analytics, retry and fallback dialing policies, AI agent tool-chaining, calendar-availability tools, and a system for rapidly cloning and configuring agents to accelerate customer onboarding.",
+        "Drove AI share of committed code to 87% across the engineering org (Cursor analytics, all repos) by authoring shared Cursor rules, a context-monorepo of agent skills (pre-MR checklist, design-doc rule, logging conventions), and rolling out Renovate, Ruff, and typing standards across every Python repo."
       ],
-      "summary": "First engineer and first employee. Responsible for building core infrastructure, product features, and engineering practices from the ground up.",
       "location": "San Francisco"
     },
     {
@@ -99,7 +96,7 @@
   "skills": [
     {
       "name": "Backend",
-      "keywords": ["Python", "Django", "FastAPI", "Node.js/Typescript", "C#", "Ruby", "Celery", "RabbitMQ"]
+      "keywords": ["Python", "Django", "FastAPI", "Node.js/Typescript", "C#", "Ruby", "Celery", "RabbitMQ", "Pipecat", "Twilio", "gRPC"]
     },
     {
       "name": "Data",
@@ -111,11 +108,15 @@
     },
     {
       "name": "Infrastructure",
-      "keywords": ["AWS", "Docker", "Kubernetes", "Helm", "Git", "Linux"]
+      "keywords": ["AWS", "Docker", "Kubernetes", "Helm", "Git", "Linux", "Terraform", "Statsig"]
     },
     {
       "name": "Observability",
       "keywords": ["Grafana", "Prometheus", "Loki", "Tempo", "Sentry"]
+    },
+    {
+      "name": "AI Development Tools",
+      "keywords": ["Cursor", "Claude Code", "GitHub Copilot", "MCP", "Cursor Rules"]
     }
   ],
   "languages": [],
