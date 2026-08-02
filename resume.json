@@ -6,7 +6,7 @@
     "email": "phillipdensmorechaffee@gmail.com",
     "phone": "443-553-5272",
     "url": "",
-    "summary": "Software engineer with 10+ years of experience building distributed backend systems. Currently founding engineer at Sela AI, building conversational AI phone agents across the voice runtime, backend, telephony orchestration, Kubernetes scaling, and observability. Strong system-design bias; happiest collaborating across product, infra, and ML.",
+    "summary": "Software engineer focused on the infrastructure AI agents run on: the runtime, orchestration, and testing that let them act reliably in real time and over long-horizon, multi-step tasks. At Sela AI, maintained the LLM service that decides how agents behave turn by turn on live calls and built the orchestration layer under it, including a reusable agent-orchestration state-machine library, the call-scoped runtime that holds state across turns, and the warm-transfer system that keeps two live call legs consistent under concurrent events. Also built the agentic engineering environment the team used, where coding agents take a ticket all the way to a reviewed merge request.",
     "location": {
       "countryCode": "US",
       "city": "San Francisco"
@@ -26,18 +26,19 @@
   },
   "work": [
     {
-      "name": "Sela",
+      "name": "Sela AI",
       "position": "Founding Software Engineer",
-      "startDate": "2024",
+      "startDate": "2025-02",
       "tech": ["Python", "Django", "FastAPI", "PostgreSQL", "Redis", "RabbitMQ", "Celery", "AWS", "Docker", "Kubernetes", "Helm", "Twilio", "Pipecat", "gRPC", "Terraform", "Statsig"],
       "highlights": [
-        "First engineer and first employee at an AI startup building conversational AI phone agents; shipped 430+ merged MRs across the founding Python microservices stack (Django, FastAPI, Celery, gRPC) on Kubernetes in 16 months, owning the founding stack end-to-end.",
-        "Designed the warm-transfer phone calling system that hands live calls between AI agents and human operators: built a shared orchestration library with typed parent/child state machines, compare-and-set transitions, and snapshot/diff merge for concurrent saves on a Redis-backed session store, then rolled it out across the voice runtime, backend, and a parallel e2e suite behind feature flags.",
-        "Owned Kubernetes scaling and cost posture for the voice runtime: built predictive autoscaling on KEDA driven by scheduled-call counts 15 minutes ahead, replaced a 30-minute preStop sleep with a SIGTERM-aware graceful WebSocket drain across 4 gunicorn workers per pod, and cut overnight floor pods by ~75% with no impact on morning ramp.",
-        "Built the observability platform from scratch using Grafana, Prometheus, Loki, Tempo, and Sentry; instrumented call-quality and pipeline-timing histograms across services, then cut histogram cardinality by an order of magnitude by pruning high-cardinality labels when TSDB queries were timing out the on-call dashboard.",
-        "Shipped customer-facing telephony and AI-agent product features: call-outcome modeling driven by carrier disconnect reasons and Twilio AMD, agent / user talk-time analytics, retry and fallback dialing policies, AI agent tool-chaining, calendar-availability tools, and a system for rapidly cloning and configuring agents to accelerate customer onboarding.",
-        "Drove AI share of committed code to 87% across the engineering org (Cursor analytics, all repos) by authoring shared Cursor rules, a context-monorepo of agent skills (pre-MR checklist, design-doc rule, logging conventions), and rolling out Renovate, Ruff, and typing standards across every Python repo."
+        "As primary maintainer, owned the real-time LLM service that decides how phone agents behave on live calls, from turn generation to tool execution and state transitions. Replaced a fixed 30-minute shutdown sleep with a SIGTERM-aware WebSocket drain so in-flight calls drained on deploy.",
+        "Profiled the asyncio event loop under live call traffic and took blocking work off it: cached an S3 client whose per-call connector setup ran 100-160ms on the loop thread, moved a ~300ms synchronous audio decode onto worker threads, and added event-loop lag and pending-task metrics to catch the next regression.",
+        "Designed and built warm transfer for live calls, including the multi-target dial path, on a reusable agent-orchestration state-machine library: a dual-leg Redis state model whose compare-and-swap transitions keep the customer leg and the transfer-target leg consistent under concurrent webhook, phone-agent, and telephony events. In production since 2025, it carried 340,000 transfers for 59 companies at a 70% connect rate.",
+        "Refactored the agent state machine, a config-driven graph where each state carries its own prompt, tool set, and model config, and the model moves between states by calling them as tools. Consolidating per-call data in one call-scoped runtime fixed a silent state-loss bug and turned a transition that had copied seven fields between state objects into a single pointer update.",
+        "Created and maintained the platform's end-to-end test suite, so call-path changes were verified before release. Later built the hermetic stack beneath it: backend, real-time LLM service, and mocked telephony, model, and observability providers, all in containers with no external accounts.",
+        "Built the team's agentic engineering environment: a cross-service context monorepo that gives coding agents full multi-repo visibility, plus codified workflows that carry a ticket through research, planning, implementation, and review. Landed 560 merge requests over 20 months of contract and full-time work."
       ],
+      "summary": "Contracted in 2024, then joined full-time in February 2025.",
       "location": "San Francisco"
     },
     {
@@ -108,15 +109,11 @@
     },
     {
       "name": "Infrastructure",
-      "keywords": ["AWS", "Docker", "Kubernetes", "Helm", "Git", "Linux", "Terraform", "Statsig"]
+      "keywords": ["AWS", "Docker", "Kubernetes", "Helm", "Git", "Linux", "Terraform", "Statsig", "MCP"]
     },
     {
       "name": "Observability",
       "keywords": ["Grafana", "Prometheus", "Loki", "Tempo", "Sentry"]
-    },
-    {
-      "name": "AI Development Tools",
-      "keywords": ["Cursor", "Claude Code", "GitHub Copilot", "MCP", "Cursor Rules"]
     }
   ],
   "languages": [],
