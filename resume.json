@@ -6,7 +6,7 @@
     "email": "phillipdensmorechaffee@gmail.com",
     "phone": "443-553-5272",
     "url": "",
-    "summary": "Software engineer focused on the infrastructure AI agents run on: the runtime, orchestration, and testing that let them act reliably in real time and over long-horizon, multi-step tasks. At Sela AI, maintained the LLM service that decides how agents behave turn by turn on live calls and built the orchestration layer under it, including a reusable agent-orchestration state-machine library, the call-scoped runtime that holds state across turns, and the warm-transfer system that keeps two live call legs consistent under concurrent events. Also built the agentic engineering environment the team used, where coding agents take a ticket all the way to a reviewed merge request.",
+    "summary": "Software engineer interested in neural networks and humans, music and dance. Likes working on and reading about neural network training optimization, and how networks get used in the application layer and in everyday human hands. At Sela AI, built the runtime, orchestration, and testing that AI agents run on.",
     "location": {
       "countryCode": "US",
       "city": "San Francisco"
