@@ -31,12 +31,13 @@
       "startDate": "2025-02",
       "tech": ["Python", "Django", "FastAPI", "PostgreSQL", "Redis", "RabbitMQ", "Celery", "AWS", "Docker", "Kubernetes", "Helm", "Twilio", "Pipecat", "gRPC", "Terraform", "Statsig"],
       "highlights": [
-        "As primary maintainer, owned the real-time LLM service that decides how phone agents behave on live calls, from turn generation to tool execution and state transitions. Replaced a fixed 30-minute shutdown sleep with a SIGTERM-aware WebSocket drain so in-flight calls drained on deploy.",
-        "Profiled the asyncio event loop under live call traffic and took blocking work off it: cached an S3 client whose per-call connector setup ran 100-160ms on the loop thread, moved a ~300ms synchronous audio decode onto worker threads, and added event-loop lag and pending-task metrics to catch the next regression.",
-        "Designed and built warm transfer for live calls, including the multi-target dial path, on a reusable agent-orchestration state-machine library: a dual-leg Redis state model whose compare-and-swap transitions keep the customer leg and the transfer-target leg consistent under concurrent webhook, phone-agent, and telephony events. In production since 2025, it carried 340,000 transfers for 59 companies at a 70% connect rate.",
-        "Refactored the agent state machine, a config-driven graph where each state carries its own prompt, tool set, and model config, and the model moves between states by calling them as tools. Consolidating per-call data in one call-scoped runtime fixed a silent state-loss bug and turned a transition that had copied seven fields between state objects into a single pointer update.",
-        "Created and maintained the platform's end-to-end test suite, so call-path changes were verified before release. Later built the hermetic stack beneath it: backend, real-time LLM service, and mocked telephony, model, and observability providers, all in containers with no external accounts.",
-        "Built the team's agentic engineering environment: a cross-service context monorepo that gives coding agents full multi-repo visibility, plus codified workflows that carry a ticket through research, planning, implementation, and review. Landed 560 merge requests over 20 months of contract and full-time work."
+        "Lead Sela’s agent orchestration service for real-time LLM calls. Replaced 30-minute deployment sleeps with graceful draining so in-flight calls could finish.",
+        "Designed Sela’s warm-transfer state machine with atomic Redis transitions, powering 340,000 transfers across 59 companies at a 70% connect rate.",
+        "Refactored the agent state machine around a call-scoped runtime, replacing seven-field state copies with a single active-state pointer.",
+        "Removed 100–160ms of per-call S3 setup from the event loop and moved ~300ms audio decoding to worker threads.",
+        "Migrated backend autoscaling from CPU HPA to demand-driven KEDA, cutting the always-on replica floor from 40 to 20.",
+        "Built a hermetic end-to-end test platform that mocked four external providers, enabled credential-free cloud runs, and cut runtime from ~7 to ~3.5 minutes.",
+        "Built the cross-service context monorepo and agent workflows that standardized AI-assisted engineering from research through review."
       ],
       "summary": "Contracted in 2024, then joined full-time in February 2025.",
       "location": "San Francisco"
