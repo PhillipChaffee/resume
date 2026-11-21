@@ -50,6 +50,7 @@
         "GitLab CI"
       ],
       "highlights": [
+        "Lead the engineering team of about 10 day to day: make architecture calls, review code (about 1,000 teammates’ merge requests so far), unblock engineers, and define parts of the engineering process.",
         "Designed and built warm transfer: the AI agent dials one or more loan officers in parallel, a second agent screens whoever answers, and the customer is joined to the live call. In production since September 2025.",
         "Wrote the shared orchestration library behind it, moving transfer state from lock-guarded Redis records to a state machine with validated compare-and-set transitions; rolled it out behind a feature gate, then deleted the old path.",
         "Built predictive autoscaling: a Prometheus metric forecasts concurrent calls 15–20 minutes ahead from the outbound call schedule and drives KEDA for the call server, API and workers. Cut the API’s always-on floor from 40 pods to 20, and lower overnight.",
@@ -59,8 +60,7 @@
         "After hung Celery workers kept reporting healthy during a queue backlog, fixed the producer bug and added a worker-lifecycle sentinel with broker-independent Kubernetes probes on every worker fleet.",
         "Used continuous profiling and event-loop lag metrics to remove two blocking calls from the live-call path: 100–160ms of S3 client creation and a ~300ms audio decode.",
         "Built the end-to-end suite that runs against every dev deploy of both services, with per-test isolated tenants, Redis-leased phone numbers and warm-transfer scenarios played by three cooperating AI agents; added a hermetic variant that mocks four external providers.",
-        "Created the cross-service context monorepo, where 14 other engineers have since merged work, and wrote its coding-agent workflows for research, plan review and code review.",
-        "Reviewed about 1,000 teammates’ merge requests across the call server and backend."
+        "Lead the team’s AI coding workflows: created the cross-service context monorepo, where 14 other engineers have since merged work, and wrote its agent workflows for research, plan review and code review."
       ],
       "summary": "Sela builds AI voice and SMS agents that call sales leads and hand interested callers to a human. Contracted in 2024, then joined full-time in February 2025.",
       "location": "San Francisco"
