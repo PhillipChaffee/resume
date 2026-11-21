@@ -47,7 +47,8 @@
         "OpenTelemetry",
         "Twilio",
         "Statsig",
-        "GitLab CI"
+        "GitLab CI",
+        "TLA+"
       ],
       "highlights": [
         "Lead the engineering team of about 10 day to day: make architecture calls, review code (about 1,000 merge requests so far), and set parts of the engineering process.",
@@ -57,7 +58,8 @@
         "Rebuilt the core of the conversation engine: one call-scoped runtime replaced seven copied state fields, and one tool-call ledger replaced eight separate stores. Migrated live traffic with dual writes and automatic fallback.",
         "Replaced a fixed 30-minute shutdown wait with draining that lets in-flight calls finish, and removed two blocking calls (100–160ms and ~300ms) from the live-call path.",
         "Built the end-to-end test suite that runs on every dev deploy, including transfer scenarios played by three AI agents.",
-        "Lead the team’s AI coding workflows. Created the shared context repository that 14 other engineers have contributed to, and wrote its agent workflows for research, planning and code review."
+        "Lead the team’s AI coding workflows. Created the shared context repository that 14 other engineers have contributed to, and wrote its agent workflows for research, planning and code review.",
+        "Modeled four parts of the call engine in TLA+ (turn lifecycle, tool resolution, the tool ledger and transfer orchestration), with tests that check recorded call traces against the models. In review."
       ],
       "summary": "Sela builds AI voice and SMS agents that call sales leads and hand interested callers to a human. Contracted in 2024, then joined full-time in February 2025.",
       "location": "San Francisco"
@@ -179,6 +181,12 @@
         "Loki",
         "Tempo",
         "Sentry"
+      ]
+    },
+    {
+      "name": "Formal methods",
+      "keywords": [
+        "TLA+"
       ]
     }
   ],
