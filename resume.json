@@ -6,7 +6,7 @@
     "email": "phillipdensmorechaffee@gmail.com",
     "phone": "443-553-5272",
     "url": "",
-    "summary": "Software engineer interested in neural networks and humans, music and dance. Likes working on and reading about neural network training optimization, and how networks get used in the application layer and in everyday human hands. At Sela AI, built the runtime, orchestration, and testing that AI agents run on.",
+    "summary": "Software engineer with ten years across voice AI, speech analytics and fintech. At Sela AI, builds the live-call runtime that AI voice agents run on (call transfer, the conversation engine, autoscaling) and the tooling the team's coding agents work in.",
     "location": {
       "countryCode": "US",
       "city": "San Francisco"
@@ -29,58 +29,90 @@
       "name": "Sela AI",
       "position": "Founding Software Engineer",
       "startDate": "2025-02",
-      "tech": ["Python", "Django", "FastAPI", "PostgreSQL", "Redis", "RabbitMQ", "Celery", "AWS", "Docker", "Kubernetes", "Helm", "Twilio", "Pipecat", "gRPC", "Terraform", "Statsig"],
-      "highlights": [
-        "Lead Sela’s agent orchestration service for real-time LLM calls. Replaced 30-minute deployment sleeps with graceful draining so in-flight calls could finish.",
-        "Designed Sela’s warm-transfer state machine with atomic Redis transitions, powering 340,000 transfers across 59 companies at a 70% connect rate.",
-        "Refactored the agent state machine around a call-scoped runtime, replacing seven-field state copies with a single active-state pointer.",
-        "Removed 100–160ms of per-call S3 setup from the event loop and moved ~300ms audio decoding to worker threads.",
-        "Migrated backend autoscaling from CPU HPA to demand-driven KEDA, cutting the always-on replica floor from 40 to 20.",
-        "Built a hermetic end-to-end test platform that mocked four external providers, enabled credential-free cloud runs, and cut runtime from ~7 to ~3.5 minutes.",
-        "Built the cross-service context monorepo and agent workflows that standardized AI-assisted engineering from research through review."
+      "tech": [
+        "Python",
+        "FastAPI",
+        "Django",
+        "PostgreSQL",
+        "Redis",
+        "RabbitMQ",
+        "Celery",
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "Helm",
+        "KEDA",
+        "Prometheus",
+        "Grafana",
+        "OpenTelemetry",
+        "Twilio",
+        "Statsig",
+        "GitLab CI"
       ],
-      "summary": "Contracted in 2024, then joined full-time in February 2025.",
+      "highlights": [
+        "Designed and built warm transfer: the AI agent dials one or more loan officers in parallel, a second agent screens whoever answers, and the customer is joined to the live call. In production since September 2025.",
+        "Wrote the shared orchestration library behind it, moving transfer state from lock-guarded Redis records to a state machine with validated compare-and-set transitions; rolled it out behind a feature gate, then deleted the old path.",
+        "Built predictive autoscaling: a Prometheus metric forecasts concurrent calls 15–20 minutes ahead from the outbound call schedule and drives KEDA for the call server, API and workers. Cut the API’s always-on floor from 40 pods to 20, and lower overnight.",
+        "Refactored the agent state machine around a call-scoped runtime, replacing seven-field state copies on every transition with a single active-state pointer, and put LLM providers behind an adapter layer checked by golden prompt snapshots.",
+        "Consolidated tool-call state from eight per-call stores into one typed, append-only ledger, migrating live traffic with dual writes, gated reads with automatic fallback, and divergence counters before deleting the old stores.",
+        "Replaced a fixed 30-minute shutdown sleep on call-server pods with connection-aware draining that lets in-flight calls finish before a worker exits.",
+        "After hung Celery workers kept reporting healthy during a queue backlog, fixed the producer bug and added a worker-lifecycle sentinel with broker-independent Kubernetes probes on every worker fleet.",
+        "Used continuous profiling and event-loop lag metrics to remove two blocking calls from the live-call path: 100–160ms of S3 client creation and a ~300ms audio decode.",
+        "Built the end-to-end suite that runs against every dev deploy of both services, with per-test isolated tenants, Redis-leased phone numbers and warm-transfer scenarios played by three cooperating AI agents; added a hermetic variant that mocks four external providers.",
+        "Created the cross-service context monorepo, where 14 other engineers have since merged work, and wrote its coding-agent workflows for research, plan review and code review.",
+        "Reviewed about 1,000 teammates’ merge requests across the call server and backend."
+      ],
+      "summary": "Sela builds AI voice and SMS agents that call sales leads and hand interested callers to a human. Contracted in 2024, then joined full-time in February 2025.",
       "location": "San Francisco"
     },
     {
       "name": "VoiceOps",
-      "position": "Senior Software Engineer",
-      "startDate": "2021",
-      "endDate": "2023",
-      "tech": ["Rails", "React", "Node.js", "Python", "AWS", "PostgreSQL", "Redis"],
-      "highlights": ["Redesigned the transcription data pipeline, reducing cost by 90% and bringing cost per audio minute from $.20 to $.02.", "Architected a call audio integration API and a microservice for text-audio alignment.", "Implemented SAML SSO allowing customers to authenticate using their own identity provider. Used by 20% of clients.", "Fulfilled on-call duties, resolving 5+ production issues each month.", "Wrote a <a href='https://www.npmjs.com/package/assemblyai-v2-node-sdk'>Typescript SDK</a> for the AssemblyAI API."],
-      "summary": "Led engineering ceremonies and collaborated with senior engineers on new architecture including API design, microservice development, and an overhaul of the transcription platform.",
-      "location": "San Francisco Bay Area"
-    },
-    {
-      "name": "VoiceOps",
-      "position": "Software Engineer",
+      "position": "Senior Software Engineer (promoted from Software Engineer in 2021)",
       "startDate": "2020",
-      "endDate": "2021",
-      "tech": ["Rails", "React", "Python", "AWS", "PostgreSQL", "Redis"],
-      "highlights": ["Built a mechanical turk style transcription marketplace supporting 10k+ daily users performing manual transcription, transcript quality grading, and annotation tagging tasks.", "Developed a data processing pipeline that transformed raw audio into transcribed and tagged text across multiple processing stages.", "Built the customer-facing review platform for call center managers to view transcripts, review annotation labels, and provide coaching feedback.", "Developed multiple customer integrations that imported data from external partners into the processing pipeline."],
-      "summary": "Built data collection platforms, processing pipelines, and customer-facing tools for a voice analytics startup.",
+      "endDate": "2023",
+      "tech": [
+        "Rails",
+        "React",
+        "Node.js",
+        "Python",
+        "AWS",
+        "PostgreSQL",
+        "Redis"
+      ],
+      "highlights": [
+        "Redesigned the transcription data pipeline, reducing cost by 90% and bringing cost per audio minute from $.20 to $.02.",
+        "Architected a call audio integration API and a microservice for text-audio alignment.",
+        "Implemented SAML SSO allowing customers to authenticate using their own identity provider. Used by 20% of clients.",
+        "Built a mechanical turk style transcription marketplace supporting 10k+ daily users performing manual transcription, transcript quality grading, and annotation tagging tasks.",
+        "Built the customer-facing review platform for call center managers to view transcripts, review annotation labels, and provide coaching feedback.",
+        "Wrote a <a href='https://www.npmjs.com/package/assemblyai-v2-node-sdk'>Typescript SDK</a> for the AssemblyAI API."
+      ],
+      "summary": "Voice analytics startup. Built data collection platforms, the transcription pipeline and customer-facing review tools, then led engineering ceremonies and worked on new architecture as a senior engineer.",
       "location": "San Francisco Bay Area"
     },
     {
       "name": "Chatham Financial",
-      "position": "Software Engineer",
-      "startDate": "2017",
-      "endDate": "2020",
-      "tech": ["C#", ".NET", ".NET Core", "Angular", "React", "Python", "SQLServer", "Redis"],
-      "highlights": ["Built a .NET Core authentication microservice replacing a legacy library, supporting 10k+ requests/sec across all web applications.", "Implemented SAML SSO for the flagship website, used internally and by multiple clients.", "Migrated document storage from a distributed file system to blob storage with failover replication, serving all internal and client-uploaded documents."],
-      "summary": "Platform Engineering team building shared infrastructure used by development teams across the company: REST API templates, document storage, authentication services, and permissions APIs.",
-      "location": "Kennett Square, Pennsylvania"
-    },
-    {
-      "name": "Chatham Financial",
-      "position": "Software Test Engineer",
+      "position": "Software Engineer (promoted from Software Test Engineer in 2017)",
       "startDate": "2016",
-      "endDate": "2017",
-      "tech": ["Ruby", "C#", "SpecFlow", "RSpec", "Selenium", "Angular", "MongoDB"],
-      "highlights": ["Collaboratively lead a project to create an internal test dashboard that aggregated every software team's test results into a single platform. The platform allowed users to view their test results including screenshots of failed UI tests and re-run the tests, no matter the test runner, directly from the platform.", "Wrote automated acceptance/regression tests in C# and Ruby to confirm the software’s functionality daily."],
-      "summary": "Helped guide a small team of developers in creating the correct software for complex hedge accounting situations. Learned the hedge accounting system and constantly asked pointed questions to help guide the team’s thinking.",
-      "location": "Greater Philadelphia Area"
+      "endDate": "2020",
+      "tech": [
+        "C#",
+        ".NET Core",
+        "Angular",
+        "React",
+        "Python",
+        "Ruby",
+        "SQLServer",
+        "Redis"
+      ],
+      "highlights": [
+        "Built a .NET Core authentication microservice replacing a legacy library, supporting 10k+ requests/sec across all web applications.",
+        "Implemented SAML SSO for the flagship website, used internally and by multiple clients.",
+        "Migrated document storage from a distributed file system to blob storage with failover replication, serving all internal and client-uploaded documents.",
+        "Co-led an internal test dashboard that aggregated every software team’s test results in one place, with screenshots of failed UI tests and re-runs from the dashboard for any test runner."
+      ],
+      "summary": "Platform Engineering team building shared infrastructure used by development teams across the company: authentication, document storage, permissions APIs and REST API templates.",
+      "location": "Kennett Square, Pennsylvania"
     }
   ],
   "volunteer": [],
@@ -98,23 +130,59 @@
   "skills": [
     {
       "name": "Backend",
-      "keywords": ["Python", "Django", "FastAPI", "Node.js/Typescript", "C#", "Ruby", "Celery", "RabbitMQ", "Pipecat", "Twilio", "gRPC"]
+      "keywords": [
+        "Python",
+        "Django",
+        "FastAPI",
+        "Node.js/Typescript",
+        "C#",
+        "Ruby",
+        "Celery",
+        "RabbitMQ",
+        "Twilio"
+      ]
     },
     {
       "name": "Data",
-      "keywords": ["PostgreSQL", "Redis", "SQL", "NoSQL"]
+      "keywords": [
+        "PostgreSQL",
+        "Redis",
+        "SQL",
+        "NoSQL"
+      ]
     },
     {
       "name": "Frontend",
-      "keywords": ["React", "Angular"]
+      "keywords": [
+        "React",
+        "Angular"
+      ]
     },
     {
       "name": "Infrastructure",
-      "keywords": ["AWS", "Docker", "Kubernetes", "Helm", "Git", "Linux", "Terraform", "Statsig", "MCP"]
+      "keywords": [
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "Helm",
+        "KEDA",
+        "GitLab CI",
+        "Git",
+        "Linux",
+        "Statsig",
+        "MCP"
+      ]
     },
     {
       "name": "Observability",
-      "keywords": ["Grafana", "Prometheus", "Loki", "Tempo", "Sentry"]
+      "keywords": [
+        "Grafana",
+        "Prometheus",
+        "OpenTelemetry",
+        "Loki",
+        "Tempo",
+        "Sentry"
+      ]
     }
   ],
   "languages": [],
