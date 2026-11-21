@@ -18,7 +18,7 @@
         "url": "https://www.linkedin.com/in/phillipdensmorechaffee/"
       },
       {
-        "network": "Github",
+        "network": "GitHub",
         "username": "phillipchaffee",
         "url": "https://github.com/phillipchaffee"
       }
@@ -50,17 +50,14 @@
         "GitLab CI"
       ],
       "highlights": [
-        "Lead the engineering team of about 10 day to day: make architecture calls, review code (about 1,000 teammates’ merge requests so far), unblock engineers, and define parts of the engineering process.",
-        "Designed and built warm transfer: the AI agent dials one or more loan officers in parallel, a second agent screens whoever answers, and the customer is joined to the live call. In production since September 2025.",
-        "Wrote the shared orchestration library behind it, moving transfer state from lock-guarded Redis records to a state machine with validated compare-and-set transitions; rolled it out behind a feature gate, then deleted the old path.",
-        "Built predictive autoscaling: a Prometheus metric forecasts concurrent calls 15–20 minutes ahead from the outbound call schedule and drives KEDA for the call server, API and workers. Cut the API’s always-on floor from 40 pods to 20, and lower overnight.",
-        "Refactored the agent state machine around a call-scoped runtime, replacing seven-field state copies on every transition with a single active-state pointer, and put LLM providers behind an adapter layer checked by golden prompt snapshots.",
-        "Consolidated tool-call state from eight per-call stores into one typed, append-only ledger, migrating live traffic with dual writes, gated reads with automatic fallback, and divergence counters before deleting the old stores.",
-        "Replaced a fixed 30-minute shutdown sleep on call-server pods with connection-aware draining that lets in-flight calls finish before a worker exits.",
-        "After hung Celery workers kept reporting healthy during a queue backlog, fixed the producer bug and added a worker-lifecycle sentinel with broker-independent Kubernetes probes on every worker fleet.",
-        "Used continuous profiling and event-loop lag metrics to remove two blocking calls from the live-call path: 100–160ms of S3 client creation and a ~300ms audio decode.",
-        "Built the end-to-end suite that runs against every dev deploy of both services, with per-test isolated tenants, Redis-leased phone numbers and warm-transfer scenarios played by three cooperating AI agents; added a hermetic variant that mocks four external providers.",
-        "Lead the team’s AI coding workflows: created the cross-service context monorepo, where 14 other engineers have since merged work, and wrote its agent workflows for research, plan review and code review."
+        "Lead the engineering team of about 10 day to day: make architecture calls, review code (about 1,000 merge requests so far), and set parts of the engineering process.",
+        "Designed and built warm transfer, where the AI agent calls loan officers, screens whoever answers, and joins them to the customer’s live call. In production since September 2025.",
+        "Wrote the shared state-machine library that tracks each transfer, and moved live traffic to it behind a feature flag.",
+        "Built predictive autoscaling that forecasts call volume 15–20 minutes ahead from the outbound call schedule. Cut the API’s always-on floor from 40 pods to 20.",
+        "Rebuilt the core of the conversation engine: one call-scoped runtime replaced seven copied state fields, and one tool-call ledger replaced eight separate stores. Migrated live traffic with dual writes and automatic fallback.",
+        "Replaced a fixed 30-minute shutdown wait with draining that lets in-flight calls finish, and removed two blocking calls (100–160ms and ~300ms) from the live-call path.",
+        "Built the end-to-end test suite that runs on every dev deploy, including transfer scenarios played by three AI agents.",
+        "Lead the team’s AI coding workflows. Created the shared context repository that 14 other engineers have contributed to, and wrote its agent workflows for research, planning and code review."
       ],
       "summary": "Sela builds AI voice and SMS agents that call sales leads and hand interested callers to a human. Contracted in 2024, then joined full-time in February 2025.",
       "location": "San Francisco"
@@ -80,12 +77,12 @@
         "Redis"
       ],
       "highlights": [
-        "Redesigned the transcription data pipeline, reducing cost by 90% and bringing cost per audio minute from $.20 to $.02.",
+        "Redesigned the transcription data pipeline, reducing cost by 90% and bringing cost per audio minute from $0.20 to $0.02.",
         "Architected a call audio integration API and a microservice for text-audio alignment.",
         "Implemented SAML SSO allowing customers to authenticate using their own identity provider. Used by 20% of clients.",
-        "Built a mechanical turk style transcription marketplace supporting 10k+ daily users performing manual transcription, transcript quality grading, and annotation tagging tasks.",
+        "Built a Mechanical Turk-style transcription marketplace supporting 10k+ daily users performing manual transcription, transcript quality grading, and annotation tagging tasks.",
         "Built the customer-facing review platform for call center managers to view transcripts, review annotation labels, and provide coaching feedback.",
-        "Wrote a <a href='https://www.npmjs.com/package/assemblyai-v2-node-sdk'>Typescript SDK</a> for the AssemblyAI API."
+        "Wrote a <a href='https://www.npmjs.com/package/assemblyai-v2-node-sdk'>TypeScript SDK</a> for the AssemblyAI API."
       ],
       "summary": "Voice analytics startup. Built data collection platforms, the transcription pipeline and customer-facing review tools, then led engineering ceremonies and worked on new architecture as a senior engineer.",
       "location": "San Francisco Bay Area"
@@ -102,7 +99,7 @@
         "React",
         "Python",
         "Ruby",
-        "SQLServer",
+        "SQL Server",
         "Redis"
       ],
       "highlights": [
@@ -122,7 +119,7 @@
       "title": "Gold Medal of Achievement (Eagle Scout)",
       "date": "2013",
       "awarder": "Royal Rangers",
-      "summary": "Earned the Gold Medal of Achievement in Royal Rangers, a program that mirrors boy scouts. The GMA has all the same requirements as the Eagle Scout Award."
+      "summary": "Earned the Gold Medal of Achievement in Royal Rangers, a program that mirrors the Boy Scouts. The GMA has all the same requirements as the Eagle Scout Award."
     }
   ],
   "certificates": [],
@@ -134,7 +131,7 @@
         "Python",
         "Django",
         "FastAPI",
-        "Node.js/Typescript",
+        "Node.js/TypeScript",
         "C#",
         "Ruby",
         "Celery",
@@ -192,7 +189,7 @@
     {
       "name": "Nand 2 Tetris",
       "startDate": "2015",
-      "description": "Built a virtual 16-bit Von-Neumann computer from N-And logic gates.",
+      "description": "Built a virtual 16-bit von Neumann computer from NAND logic gates.",
       "url": "https://github.com/PhillipChaffee/n2t"
     }
   ],
