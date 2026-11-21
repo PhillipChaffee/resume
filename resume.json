@@ -186,7 +186,8 @@
     {
       "name": "Formal methods",
       "keywords": [
-        "TLA+"
+        "TLA+ (TLC)",
+        "CBMC"
       ]
     }
   ],
@@ -194,6 +195,17 @@
   "interests": [],
   "references": [],
   "projects": [
+    {
+      "name": "magic",
+      "startDate": "2026-09",
+      "url": "https://github.com/PhillipChaffee/magic",
+      "description": "Open-source (MIT) skill kit for coding agents. Wrote its formal-verification skills, which route a task to model-checking, Hoare-logic or dependent-type tools, and tested checkers that stop an agent from weakening a locked specification or adding escape hatches such as sorry or assume to a proof."
+    },
+    {
+      "name": "CPython proofs (in progress)",
+      "startDate": "2026-11",
+      "description": "Building a CBMC harness for CPython's C source, with line-coverage accounting and mutation tests that measure how strong each proof is. The first bounded proofs pass on unmodified source."
+    },
     {
       "name": "Nand 2 Tetris",
       "startDate": "2015",
